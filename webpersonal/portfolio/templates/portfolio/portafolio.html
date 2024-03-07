@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- We extend general content from the script base.html from the folder 'core' -->
+{% extends 'core/base.html'%}
+
+<!-- Header name properly of this document -->
+{% block title %} Portafolio {% endblock %}
+
+<!-- Block background where we can choose the backgorund image for the HTML view-->
+{% block background %} {% load static %} {% static 'core/img/portfolio-bg.jpg' %} {% endblock %}
+
+<!-- Header section of the 'base.html' script, please refer to that script top the section 'cabecera' -->
+{% block headers %}
+<h1>Portafolio</h1>
+<span class="subheading">Repertorio de proyectos</span>
+{% endblock %}
+
+
+<!-- body part of this HTML-->
+<body>
+{% block content %}
+
+<!-- Check the 'views' section to see more about this variable inserted here -->
+    {% for proyecto in proyectos %}
+
+        <!-- Proyecto -->
+        <div class="row project">
+            <div class="col-lg-3 col-md-4 offset-lg-1">
+                <img class="img-fluid" src="{{proyecto.image.url}}" alt="">
+            </div>
+            <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading title">{{proyecto.title}}</h2>
+                <p>{{proyecto.description}}</p>
+                {% if proyecto.link %}
+                    <p><a href="{{proyecto.link}}">Más información</a></p>
+                {% endif %}
+            </div>
+        </div>
+
+    {% endfor %}
+
+
+{% endblock %}
+</body>
+</html>

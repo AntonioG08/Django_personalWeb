@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- We extend general content from the script base.html from the folder 'core' -->
+{% extends 'core/base.html'%}
+
+<!-- Header name properly of this document -->
+{% block title %} Portada {% endblock %}
+
+<!-- Block background where we can choose the backgorund image for the HTML view-->
+{% block background %} {% load static %} {% static 'core/img/home-bg.jpg' %} {% endblock %}
+
+<!-- Header section of the 'base.html' script, please refer to that script top the section 'cabecera' -->
+{% block headers %}
+<h1>Antonio Gómez Ruiz</h1>
+<span class="subheading">Biomedical engineer | Software engineer</span>
+{% endblock %}
+
+<!-- body part of this HTML-->
+<body>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

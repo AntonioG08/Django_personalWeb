@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- We extend general content from the script base.html from the folder 'core' -->
+{% extends 'core/base.html'%}
+
+<!-- Header name properly of this document -->
+{% block title %} Sobre mi {% endblock %}
+
+<!-- Block background where we can choose the backgorund image for the HTML view-->
+{% block background %} {% load static %} {% static 'core/img/about-bg.jpg' %} {% endblock %}
+
+<!-- Header section of the 'base.html' script, please refer to that script top the section 'cabecera' -->
+{% block headers %}
+<h1>Antonio Gómez Ruiz</h1>
+<span class="subheading">Biomedical engineer | Software engineer</span>
+{% endblock %}
+
+
+<!-- body part of this HTML-->
+<body>
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="">
+    </div>
+
+    <div class="col-lg-8 col-md-8">
+        <h2 class="section-heading">Antonio Gómez Ruiz</h2>
+        <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit...</p>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>
